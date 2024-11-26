@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { TaskData } from "../../types";
-import TimeInput from "../TimeInput";
+import { TaskData } from "../../../types";
+import TimeInput from "../../TimeInput";
 import { invoke } from "@tauri-apps/api/core";
 import { IconDeviceFloppy, IconReload } from "@tabler/icons-react";
 

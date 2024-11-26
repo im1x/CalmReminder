@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import Task from "../Task/Task";
 import EditTask from "../Task/EditTask";
 import { TaskData } from "../../types";
 import { invoke } from "@tauri-apps/api/core";
 import { CloseRequestedEvent, Window } from "@tauri-apps/api/window";
 import { IconPlus } from "@tabler/icons-react";
+import ViewTask from "../Task/ViewTask";
 
 const TasksList = () => {
   const [editTaskId, setEditTaskId] = useState<number | null>(null);
@@ -112,7 +112,7 @@ const TasksList = () => {
       id: Date.now(),
       title: "",
       time: 0,
-      timeEnd: 0,
+      timeEnd: 60,
       isPaused: true,
       isCompleted: false,
       isCyclic: true,
@@ -131,7 +131,7 @@ const TasksList = () => {
           {task.id === editTaskId ? (
             <EditTask task={task} sounds={sounds} onSave={handleSave} />
           ) : (
-            <Task
+            <ViewTask
               task={task}
               onEdit={handleEdit}
               onPause={(id) => togglePause(id)}
