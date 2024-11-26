@@ -2,6 +2,7 @@ import { useState } from "react";
 import { TaskData } from "../../types";
 import TimeInput from "../TimeInput";
 import { invoke } from "@tauri-apps/api/core";
+import { IconDeviceFloppy, IconReload } from "@tabler/icons-react";
 
 const EditTask: React.FC<{
   task: TaskData;
@@ -26,13 +27,24 @@ const EditTask: React.FC<{
         initialSeconds={taskEditTask.timeEnd}
         onTimeChange={handleTimeChange}
       />
-      <input
-        type="checkbox"
-        checked={taskEditTask.isCyclic}
-        onChange={(e) =>
-          setTaskEditTask({ ...taskEditTask, isCyclic: e.target.checked })
-        }
-      />
+
+      <span
+        style={{
+          display: "inline-flex",
+          verticalAlign: "middle",
+        }}
+      >
+        <IconReload />
+        <input
+          type="checkbox"
+          checked={taskEditTask.isCyclic}
+          onChange={(e) =>
+            setTaskEditTask({ ...taskEditTask, isCyclic: e.target.checked })
+          }
+          style={{ marginLeft: "0.5em" }}
+        />
+      </span>
+
       <select
         value={taskEditTask.sound}
         onChange={(e) => {
@@ -46,7 +58,9 @@ const EditTask: React.FC<{
           </option>
         ))}
       </select>
-      <button onClick={() => onSave(taskEditTask)}>💾</button>
+      <button onClick={() => onSave(taskEditTask)}>
+        <IconDeviceFloppy />
+      </button>
     </div>
   );
 };

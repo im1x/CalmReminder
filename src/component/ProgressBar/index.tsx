@@ -1,5 +1,11 @@
 import React from "react";
 import styles from "./ProgressBar.module.css";
+import {
+  IconPlayerPause,
+  IconPlayerPlay,
+  IconReload,
+  IconSettings,
+} from "@tabler/icons-react";
 
 interface ProgressBarProps {
   taskName: string;
@@ -27,13 +33,13 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
       <span className={styles.text}>{taskName}</span>
       <div className={styles.buttonContainer}>
         <button className={styles.button} onClick={onPause}>
-          {isPaused ? "▶️" : "⏸"}
+          {isPaused ? <IconPlayerPlay /> : <IconPlayerPause />}
         </button>
         <button className={styles.button} onClick={onReset}>
-          🔄
+          <IconReload />
         </button>
         <button className={styles.button} onClick={onEdit}>
-          ✏️
+          <IconSettings />
         </button>
       </div>
     </div>
