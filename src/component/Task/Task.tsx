@@ -6,7 +6,8 @@ const Task: React.FC<{
   onEdit: (taskId: number) => void;
   onPause: (id: number) => void;
   onReset: (id: number) => void;
-}> = ({ task, onEdit, onPause, onReset }) => {
+  onDelete: (id: number) => void;
+}> = ({ task, onEdit, onPause, onReset, onDelete }) => {
   const calculatePercentage = () => (task.time / task.timeEnd) * 100;
 
   return (
@@ -18,6 +19,7 @@ const Task: React.FC<{
         onPause={() => onPause(task.id)}
         onReset={() => onReset(task.id)}
         onEdit={() => onEdit(task.id)}
+        onDelete={() => onDelete(task.id)}
       />
     </div>
   );

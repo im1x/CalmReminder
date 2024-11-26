@@ -4,6 +4,7 @@ import EditTask from "../Task/EditTask";
 import { TaskData } from "../../types";
 import { invoke } from "@tauri-apps/api/core";
 import { CloseRequestedEvent, Window } from "@tauri-apps/api/window";
+import { IconPlus } from "@tabler/icons-react";
 
 const TasksList = () => {
   const [editTaskId, setEditTaskId] = useState<number | null>(null);
@@ -106,6 +107,22 @@ const TasksList = () => {
     });
   };
 
+  const addEmptyTask = () => {
+    const newTask: TaskData = {
+      id: Date.now(),
+      title: "",
+      time: 0,
+      timeEnd: 0,
+      isPaused: true,
+      isCompleted: false,
+      isCyclic: true,
+      sound: "Bell",
+    };
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+    tasksRef.current = [...tasksRef.current, newTask];
+    setEditTaskId(newTask.id);
+  };
+
   return (
     <div>
       <h1>Tasks</h1>
@@ -119,10 +136,14 @@ const TasksList = () => {
               onEdit={handleEdit}
               onPause={(id) => togglePause(id)}
               onReset={(id) => handleReset(id)}
+              onDelete={(id) => handleDelete(id)}
             />
           )}
         </div>
       ))}
+      <button onClick={addEmptyTask}>
+        <IconPlus />
+      </button>
     </div>
   );
 };

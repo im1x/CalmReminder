@@ -5,6 +5,7 @@ import {
   IconPlayerPlay,
   IconReload,
   IconSettings,
+  IconX,
 } from "@tabler/icons-react";
 
 interface ProgressBarProps {
@@ -14,6 +15,7 @@ interface ProgressBarProps {
   onPause: () => void;
   onReset: () => void;
   onEdit: () => void;
+  onDelete: () => void;
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({
@@ -23,6 +25,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   onPause,
   onReset,
   onEdit,
+  onDelete,
 }) => {
   return (
     <div className={styles.container}>
@@ -40,6 +43,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
         </button>
         <button className={styles.button} onClick={onEdit}>
           <IconSettings />
+        </button>
+        <button className={styles.button} onClick={onDelete}>
+          <IconX />
         </button>
       </div>
     </div>
