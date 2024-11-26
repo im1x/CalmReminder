@@ -1,0 +1,74 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cargo",
+			"command": "clippy",
+			"problemMatcher": {
+				"base": "$rustc",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}/src-tauri"
+				]
+			},
+			"label": "Project: cargo clippy",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"options": {
+				"cwd": "${workspaceFolder}/src-tauri"
+			}
+		},
+		{
+			"type": "cargo",
+			"command": "build",
+			"problemMatcher": {
+				"base": "$rustc",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}/src-tauri"
+				]
+			},
+			"label": "Project: cargo build devel",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"options": {
+				"cwd": "${workspaceFolder}/src-tauri"
+			}
+		},		
+		{
+			"label": "Project: run dev server",
+			"type": "shell",
+			"isBackground": true,
+			"command": "pnpm",
+			"args": [
+				"run",
+				"dev"
+			],
+			"problemMatcher": [],
+/* 			"runOptions": {
+				"runOn": "folderOpen"
+			}, */
+			"presentation": {
+				"reveal": "never",
+				"panel": "new",
+				"close": true
+			}
+		},
+		{
+			"label": "Project: full release",
+			"type": "shell",
+			"isBackground": true,
+			"command": "pnpm",
+			"args": [
+				"run",
+				"tauri",
+				"build"
+			],
+			"problemMatcher": []
+		}	
+	]
+}

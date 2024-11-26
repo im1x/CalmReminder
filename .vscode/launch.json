@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      
+        
+      {
+        "type": "lldb",
+        "name": "Tauri Development",
+        "request": "launch",
+        "program": "${workspaceFolder}/src-tauri/target/debug/CalmReminder.exe",
+        "preLaunchTask": "Project: cargo build devel",
+      },
+      {
+        "type": "lldb",
+        "name": "Tauri Release",
+        "request": "launch",
+        "program": "${workspaceFolder}/src-tauri/target/release/CalmReminder.exe",
+        "preLaunchTask": "Project: full release"
+      },
+    ]
+  }
