@@ -4,7 +4,7 @@ import TasksList from "./component/TaskList";
 function App() {
   return (
     <div className="container">
-      <div>
+      <div className="background-image">
         <TasksList />
       </div>
     </div>

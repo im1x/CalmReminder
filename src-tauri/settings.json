@@ -1,1 +1,1 @@
-[{"id":1,"title":"Learn React","timeEnd":15,"time":3,"isPaused":true,"isCyclic":true,"isCompleted":false,"sound":"Bell"},{"id":2,"title":"Learn Tauri","timeEnd":60,"time":13,"isPaused":true,"isCyclic":true,"isCompleted":false,"sound":"Bell"}]
+[{"id":1,"title":"Learn React","timeEnd":15,"time":4,"isPaused":false,"isCyclic":true,"isCompleted":false,"sound":"Bell"},{"id":2,"title":"Learn Tauri","timeEnd":60,"time":13,"isPaused":true,"isCyclic":true,"isCompleted":false,"sound":"Bell"}]

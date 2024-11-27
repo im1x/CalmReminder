@@ -62,7 +62,7 @@ button {
 }
 
 button:hover {
-  border-color: #396cd8;
+  border-color: #0051ff;
 }
 button:active {
   border-color: #396cd8;
@@ -92,4 +92,16 @@ button {
   button:active {
     background-color: #0f0f0f69;
   }
+}
+
+.background-image {
+  background-image: url("assets/bg.jpg"); /* Replace with the actual path */
+  background-size: cover; /* Ensures the image covers the entire window */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image repetition */
+  width: 100%;
+  height: 100%;
+  position: fixed; /* Covers the entire window */
+  top: 0;
+  left: 0;
 }
