@@ -32,7 +32,13 @@ const TimeInput: React.FC<{
   };
 
   return (
-    <input type="time" step="1" value={time} onChange={handleTimeChange} />
+    <input
+      className="half-transparent"
+      type="time"
+      step="1"
+      value={time}
+      onChange={handleTimeChange}
+    />
   );
 };
 

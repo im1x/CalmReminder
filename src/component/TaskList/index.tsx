@@ -125,7 +125,6 @@ const TasksList = () => {
 
   return (
     <div>
-      <h1>Tasks</h1>
       {tasks.map((task) => (
         <div key={task.id}>
           {task.id === editTaskId ? (
@@ -141,7 +140,7 @@ const TasksList = () => {
           )}
         </div>
       ))}
-      <button onClick={addEmptyTask}>
+      <button className="glass-button" onClick={addEmptyTask}>
         <IconPlus />
       </button>
     </div>

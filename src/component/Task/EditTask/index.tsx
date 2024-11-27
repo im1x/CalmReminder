@@ -16,8 +16,9 @@ const EditTask: React.FC<{
   };
 
   return (
-    <div>
+    <div className="glassmorphism-bg sp-ad">
       <input
+        className="half-transparent"
         value={taskEditTask.title}
         onChange={(e) =>
           setTaskEditTask({ ...taskEditTask, title: e.target.value })
@@ -31,21 +32,22 @@ const EditTask: React.FC<{
       <span
         style={{
           display: "inline-flex",
-          verticalAlign: "middle",
+          alignItems: "center",
         }}
       >
-        <IconReload />
+        <IconReload color="white" />
         <input
           type="checkbox"
+          style={{ width: "20px", height: "20px" }}
           checked={taskEditTask.isCyclic}
           onChange={(e) =>
             setTaskEditTask({ ...taskEditTask, isCyclic: e.target.checked })
           }
-          style={{ marginLeft: "0.5em" }}
         />
       </span>
 
       <select
+        className="half-transparent"
         value={taskEditTask.sound}
         onChange={(e) => {
           setTaskEditTask({ ...taskEditTask, sound: e.target.value });
@@ -58,7 +60,7 @@ const EditTask: React.FC<{
           </option>
         ))}
       </select>
-      <button onClick={() => onSave(taskEditTask)}>
+      <button className="glass-button" onClick={() => onSave(taskEditTask)}>
         <IconDeviceFloppy />
       </button>
     </div>

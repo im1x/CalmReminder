@@ -3,8 +3,8 @@ import TasksList from "./component/TaskList";
 
 function App() {
   return (
-    <div className="container">
-      <div className="background-image">
+    <div className="background-image">
+      <div className="container">
         <TasksList />
       </div>
     </div>
