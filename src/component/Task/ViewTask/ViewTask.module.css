@@ -17,7 +17,7 @@
   width: 100%;
   background: linear-gradient(to right, #e5405e 0%, #ffdb3a 45%, #3fffa2 100%);
   z-index: 1;
-  transition: clip-path 1s linear;
+  /* transition: clip-path 1s linear; */
 }
 
 .text {
