@@ -11,8 +11,11 @@ use rodio::{OutputStream, Sink};
 
 #[tauri::command]
 fn get_tasks() -> Vec<Task> {
-    return serde_json::from_str(include_str!("../settings.json"))
-        .expect("File not found: settings.json");
+    let file = File::open("settings.json");
+    match file {
+        Ok(file) => return serde_json::from_reader(file).expect("Failed to deserialize tasks"),
+        Err(_) => return Vec::new(),
+    }
 }
 
 #[tauri::command]
